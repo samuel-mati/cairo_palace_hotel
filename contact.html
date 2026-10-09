@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact : Cairo Palace Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-main{background:var(--sand);}
+  .cm-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;}
+  .info-block{margin-bottom:30px;}
+  .info-block .k{font-size:0.8rem; color:var(--clay); font-weight:600; margin-bottom:6px;}
+  .info-block .v{font-size:1.1rem; font-weight:600;}
+  .info-block .v a{text-decoration:none; border-bottom:1.5px solid var(--brass);}
+  .hours-row{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid var(--line); font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:1px solid var(--line);}
+
+  .map-box{border:1px solid var(--line); border-radius:3px; overflow:hidden; height:420px; margin-bottom:16px;}
+  .map-box iframe{width:100%; height:100%; border:0;}
+  .map-actions{display:flex; gap:12px; flex-wrap:wrap;}
+
+  .form-wrap{background:var(--indigo); color:#fff;}
+  .form-wrap .section-head h2{color:#fff;}
+  .form-wrap .section-head p{color:#C7C1E0;}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .form-grid .full{grid-column:1 / -1;}
+  label{display:block; font-size:0.85rem; color:#C7C1E0; margin-bottom:8px;}
+  input, textarea, select{
+    width:100%; background:#2C3549; border:1px solid rgba(255,255,255,0.15); color:#fff;
+    padding:12px 14px; border-radius:2px; font-family:inherit; font-size:0.95rem;
+  }
+  input:focus, textarea:focus, select:focus{outline:2px solid var(--brass); border-color:transparent;}
+  textarea{resize:vertical; min-height:110px;}
+  .form-note{font-size:0.85rem; color:#948BB0; margin-top:16px;}
+
+  @media (max-width:860px){
+    .cm-grid, .form-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a class="brand" href="index.html">Cairo Palace Hotel</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  <nav id="siteNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h1>Reach the front desk directly</h1>
+    <p>The team is on duty 24 hours a day. Call ahead to confirm rates and availability, or use the map below to plan your route in.</p>
+  </div>
+</section>
+
+<section class="contact-main">
+  <div class="wrap">
+    <div class="cm-grid">
+      <div class="reveal">
+        <div class="contact-photo photo-frame zoom">
+          <img class="can-zoom" data-group="contact" data-caption="The main gate on the Kakuma to Lokichogio highway" src="images/gate.png" alt="Cairo Palace Hotel entrance gate on the Kakuma to Lokichogio highway" loading="lazy">
+          <div class="cap">The gate you will be looking for on the highway</div>
+        </div>
+        <div class="info-block">
+          <div class="k">Address</div>
+          <div class="v">Kakuma to Lokichogio Highway, Kakuma, Turkana County, Kenya</div>
+        </div>
+        <div class="info-block">
+          <div class="k">Front desk</div>
+          <div class="v"><a href="tel:+254726644466">+254 726 644 466</a></div>
+          <div class="v" style="margin-top:6px;"><a href="tel:+254748507659">0748 507659</a></div>
+        </div>
+        <div class="info-block">
+          <div class="k">WhatsApp</div>
+          <div class="v"><a href="https://wa.me/254748507659" target="_blank" rel="noopener noreferrer">+254 748 507659</a></div>
+        </div>
+        <div class="info-block">
+          <div class="k">Restaurant</div>
+          <div class="v"><a href="tel:+254724443321">+254 724 443 321</a></div>
+        </div>
+        <div class="info-block">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:cairopalace2020@gmail.com">cairopalace2020@gmail.com</a></div>
+        </div>
+        <div class="info-block">
+          <div class="k">Hours</div>
+          <div class="hours-row"><span>Front desk</span><span>24 hours, every day</span></div>
+          <div class="hours-row"><span>Restaurant</span><span>24 hours, every day</span></div>
+          <div class="hours-row"><span>Check in</span><span>From 12:00</span></div>
+          <div class="hours-row"><span>Check out</span><span>Before 11:00</span></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="map-box">
+          <iframe
+            src="https://www.google.com/maps?q=Cairo+Palace+Hotel,+A1,+Kakuma,+Kenya&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Cairo Palace Hotel on Google Maps">
+          </iframe>
+        </div>
+        <div class="map-actions">
+          <a class="btn" href="https://www.google.com/maps/place/Cairo+Palace+Hotel/@3.7128657,34.7860096,13z/data=!4m13!1m2!2m1!1sHotels!3m9!1s0x179fc91adfe04ccb:0x9cc9e7430bae3111!5m2!4m1!1i2!8m2!3d3.7108669!4d34.8560867!15sCgZIb3RlbHOSAQVob3RlbKoBOhABKgoiBmhvdGVscygAMh4QASIainsixGVQ51rDIRxGAWYdQunD1rZjbCyu2qAyChACIgZob3RlbHPgAQA!16s%2Fg%2F11kn55bzjh?entry=ttu" target="_blank" rel="noopener">Open in Google Maps</a>
+          <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=3.7108669,34.8560867" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-wrap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Send a booking enquiry</h2>
+      <p>Fill this in and it will open a pre-filled email to the front desk. For same-day bookings, calling is faster.</p>
+    </div>
+    <form class="reveal" id="enquiryForm">
+      <div class="form-grid">
+        <div>
+          <label for="fname">Full name</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+        <div>
+          <label for="femail">Email address</label>
+          <input type="email" id="femail" name="femail" required>
+        </div>
+        <div>
+          <label for="fcheckin">Check in date</label>
+          <input type="date" id="fcheckin" name="fcheckin">
+        </div>
+        <div>
+          <label for="froom">Room type</label>
+          <select id="froom" name="froom">
+            <option>Single</option>
+            <option>Comfort Double</option>
+            <option>VIP Suite</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="fmessage" placeholder="Number of guests, length of stay, and anything else the front desk should know"></textarea>
+        </div>
+      </div>
+      <div style="margin-top:24px;">
+        <button type="submit" class="btn">Send enquiry</button>
+      </div>
+      <div class="form-note">This opens your email app with the details filled in, addressed to cairopalace2020@gmail.com.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Cairo Palace Hotel</div>
+        <p style="max-width:34ch; color:#948BB0; font-size:0.9rem;">A gated hotel on the Kakuma to Lokichogio highway, built for travellers who need a genuinely calm place to rest in Turkana.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="rooms.html">Rooms and rates</a>
+        <a href="menu.html">Restaurant menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About the hotel</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a href="tel:+254748507659">0748 507659</a>
+        <a href="mailto:cairopalace2020@gmail.com">cairopalace2020@gmail.com</a>
+        <a href="contact.html">Map and directions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Cairo Palace Hotel, Kakuma, Turkana County, Kenya</span>
+      <span>Open 24 hours, every day of the week</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== WHATSAPP ==================== -->
+<a
+  class="whatsapp-float"
+  href="https://wa.me/254748507659"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Cairo Palace Hotel on WhatsApp"
+  title="Chat with us on WhatsApp">
+
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.52 3.48A11.84 11.84 0 0 0 12.09 0C5.54 0 .21 5.33.21 11.88c0 2.09.55 4.13 1.59 5.93L.12 24l6.33-1.66a11.86 11.86 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.16-3.46-8.41Zm-8.43 18.26h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.85 9.85 0 1 1 8.38 4.63Zm5.4-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+  </svg>
+
+  <span class="wa-label">Chat on WhatsApp</span>
+</a>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('enquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value;
+    const email = document.getElementById('femail').value;
+    const checkin = document.getElementById('fcheckin').value;
+    const room = document.getElementById('froom').value;
+    const message = document.getElementById('fmessage').value;
+    const subject = encodeURIComponent('Booking enquiry from ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Preferred check in date: ' + checkin + '\n' +
+      'Room type: ' + room + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:cairopalace2020@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>

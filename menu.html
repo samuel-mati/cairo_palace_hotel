@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu : Cairo Palace Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .menu-intro{background:var(--sand);}
+  .menu-intro-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;}
+  .menu-intro p{color:var(--ink-soft); font-size:1.02rem; margin-bottom:14px;}
+  .plate-block{height:240px; position:relative;}
+  .plate{position:absolute; border-radius:50%;}
+  .plate.p1{width:190px; height:190px; background:var(--sand-warm); top:10px; left:40px;}
+  .plate.p2{width:130px; height:130px; background:var(--brass); top:90px; left:150px;}
+
+  .menu-section{padding:80px 0; border-bottom:1px solid var(--line);}
+  .menu-section.dark{background:var(--indigo); color:#fff; border-bottom:none;}
+  .menu-section.dark .section-head h2{color:#fff;}
+  .menu-section.dark .section-head p{color:#C7C1E0;}
+  .menu-section.acacia{background:var(--acacia-deep); color:#fff;}
+  .menu-section.acacia .section-head h2{color:#fff;}
+  .menu-section.acacia .section-head p{color:#DCE7DA;}
+  .menu-list{display:grid; grid-template-columns:1fr 1fr; gap:0 50px;}
+  .menu-row{display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-top:1px solid var(--line);}
+  .menu-section.dark .menu-row, .menu-section.acacia .menu-row{border-top:1px solid rgba(255,255,255,0.14);}
+  .menu-row .name{font-weight:600; font-size:1rem;}
+  .menu-row .desc{font-size:0.88rem; color:var(--ink-soft); margin-top:3px;}
+  .menu-section.dark .menu-row .desc{color:#C0B8D6;}
+  .menu-section.acacia .menu-row .desc{color:#CFE0CC;}
+  .menu-row .price{font-family:'Fraunces', serif; font-size:1rem; white-space:nowrap; color:var(--clay);}
+  .menu-section.dark .menu-row .price, .menu-section.acacia .menu-row .price{color:var(--brass);}
+
+  .board-note{background:var(--clay); color:#fff;}
+  .board-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;}
+  .board-grid h2{color:#fff; font-size:clamp(1.6rem,3vw,2.1rem); max-width:24ch;}
+  .board-grid p{color:#F5E3D3; margin-top:10px; max-width:52ch;}
+
+  @media (max-width:860px){
+    .menu-intro-grid, .menu-list{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a class="brand" href="index.html">Cairo Palace Hotel</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  <nav id="siteNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="menu.html" class="active">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Restaurant</div>
+    <h1>A kitchen built around two cuisines</h1>
+    <p>Somali grill and a dedicated Indian kitchen, running side by side. The sample below reflects what regularly appears on the menu; dishes rotate with what is fresh.</p>
+  </div>
+</section>
+
+<section class="menu-intro">
+  <div class="wrap">
+    <div class="menu-intro-grid">
+      <div class="reveal">
+        <p>Full board packages are available for guests staying more than a night or two, covering breakfast, lunch, and dinner at a fixed daily rate. Ask the front desk for current full board pricing when you book your room.</p>
+        <p>Outside of the room, the restaurant also serves walk in guests and hosts catering for conferences and events held on the grounds.</p>
+      </div>
+      <div class="plate-block reveal">
+        <div class="photo-frame zoom p1"><img class="can-zoom" data-group="menu" data-caption="Whole grilled fish, served with sauce and greens" src="images/fish.png" alt="Whole grilled fish plated with lime and greens" loading="lazy"></div>
+        <div class="photo-frame zoom p2"><img class="can-zoom" data-group="menu" data-caption="Grilled ribs with kachumbari" src="images/grilled_meat.png" alt="Grilled meat platter with kachumbari salad" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section">
+  <div class="wrap">
+    <div class="section-head-row reveal">
+      <div class="section-head">
+        <h2>Somali grill</h2>
+        <p>Grilled meats and slow cooked stews, served with rice, chapati, or spaghetti.</p>
+      </div>
+      <div class="photo-frame zoom menu-banner"><img class="can-zoom" data-group="menu" data-caption="Grilled chicken and chips" src="images/chicken.png" alt="Grilled chicken drumsticks and chips" loading="lazy"></div>
+    </div>
+    <div class="menu-list reveal">
+      <div class="menu-row"><div><div class="name">Grilled goat, nyama choma style</div><div class="desc">Served with kachumbari and a side of ugali or rice</div></div><div class="price">KES 650</div></div>
+      <div class="menu-row"><div><div class="name">Somali beef suqaar</div><div class="desc">Cubed beef fried with onion, pepper, and tomato</div></div><div class="price">KES 550</div></div>
+      <div class="menu-row"><div><div class="name">Grilled chicken</div><div class="desc">Half chicken, grilled and served with chips or rice</div></div><div class="price">KES 600</div></div>
+      <div class="menu-row"><div><div class="name">Camel meat stew</div><div class="desc">Slow cooked with cardamom, served with anjera or rice</div></div><div class="price">KES 700</div></div>
+      <div class="menu-row"><div><div class="name">Bariis iskukaris</div><div class="desc">Somali spiced rice with your choice of meat</div></div><div class="price">KES 600</div></div>
+      <div class="menu-row"><div><div class="name">Sabaayad and stew</div><div class="desc">Layered flatbread with a bowl of meat or vegetable stew</div></div><div class="price">KES 400</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section dark">
+  <div class="wrap">
+    <div class="section-head-row reveal">
+      <div class="section-head">
+        <h2>Indian kitchen</h2>
+        <p>Curries, tandoor dishes, and rice specialities from the hotel's dedicated Indian chef.</p>
+      </div>
+      <div class="photo-frame zoom menu-banner"><img class="can-zoom" data-group="menu" data-caption="Spiced chicken curry, served with chapati" src="images/food.png" alt="Chicken curry served in a chafing dish with chapati" loading="lazy"></div>
+    </div>
+    <div class="menu-list reveal">
+      <div class="menu-row"><div><div class="name">Chicken tikka masala</div><div class="desc">Served with basmati rice or naan</div></div><div class="price">KES 700</div></div>
+      <div class="menu-row"><div><div class="name">Mutton curry</div><div class="desc">Slow cooked in a spiced onion and tomato base</div></div><div class="price">KES 750</div></div>
+      <div class="menu-row"><div><div class="name">Vegetable biryani</div><div class="desc">Layered rice with seasonal vegetables and whole spices</div></div><div class="price">KES 550</div></div>
+      <div class="menu-row"><div><div class="name">Chicken biryani</div><div class="desc">Layered basmati rice with marinated chicken</div></div><div class="price">KES 650</div></div>
+      <div class="menu-row"><div><div class="name">Dal fry with naan</div><div class="desc">Spiced lentils served with fresh baked naan</div></div><div class="price">KES 450</div></div>
+      <div class="menu-row"><div><div class="name">Paneer butter masala</div><div class="desc">Cottage cheese in a rich tomato and butter sauce</div></div><div class="price">KES 600</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section acacia">
+  <div class="wrap">
+    <div class="section-head-row reveal">
+      <div class="section-head">
+        <h2>Breakfast and beverages</h2>
+        <p>Included with most room rates, and available a la carte for walk in guests.</p>
+      </div>
+      <div class="photo-frame zoom menu-banner"><img class="can-zoom" data-group="menu" data-caption="A garnished mocktail served on the terrace" src="images/mocktail.png" alt="Garnished mocktail served at Cairo Palace Hotel" loading="lazy"></div>
+    </div>
+    <div class="menu-list reveal">
+      <div class="menu-row"><div><div class="name">Full breakfast</div><div class="desc">Eggs, toast, sausage, fruit, and a hot beverage</div></div><div class="price">KES 400</div></div>
+      <div class="menu-row"><div><div class="name">Chapati and mandazi platter</div><div class="desc">Served with tea or coffee</div></div><div class="price">KES 250</div></div>
+      <div class="menu-row"><div><div class="name">Fresh fruit plate</div><div class="desc">Seasonal fruit, sliced to order</div></div><div class="price">KES 250</div></div>
+      <div class="menu-row"><div><div class="name">Kenyan tea or coffee</div><div class="desc">Brewed fresh, served with milk on request</div></div><div class="price">KES 100</div></div>
+      <div class="menu-row"><div><div class="name">Fresh juice</div><div class="desc">Mango, passion, or watermelon, depending on season</div></div><div class="price">KES 200</div></div>
+      <div class="menu-row"><div><div class="name">Soft drinks and bottled water</div><div class="desc">Chilled, available throughout the day</div></div><div class="price">KES 100</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="board-note">
+  <div class="wrap board-grid">
+    <div>
+      <h2>Prices are indicative and may change</h2>
+      <p>Menu items rotate with what is available locally, and prices can shift with ingredient costs. Confirm the current menu and full board rates when you call to book.</p>
+    </div>
+    <a class="btn" style="background:#fff; color:var(--clay-dim);" href="tel:+254748507659">Call 0748 507659</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Cairo Palace Hotel</div>
+        <p style="max-width:34ch; color:#948BB0; font-size:0.9rem;">A gated hotel on the Kakuma to Lokichogio highway, built for travellers who need a genuinely calm place to rest in Turkana.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="rooms.html">Rooms and rates</a>
+        <a href="menu.html">Restaurant menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About the hotel</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a href="tel:+254748507659">0748 507659</a>
+        <a href="mailto:cairopalace2020@gmail.com">cairopalace2020@gmail.com</a>
+        <a href="contact.html">Map and directions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Cairo Palace Hotel, Kakuma, Turkana County, Kenya</span>
+      <span>Open 24 hours, every day of the week</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

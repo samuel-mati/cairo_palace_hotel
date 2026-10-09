@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooms and Rates : Cairo Palace Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .room-detail{background:var(--sand); border-bottom:1px solid var(--line);}
+  .rd-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;}
+  .rd-grid.reverse .rd-grid-figure{order:2;}
+  .rd-figure{height:280px; position:relative; overflow:hidden; border-radius:3px;}
+  .rd-figure.acacia{background:var(--acacia);}
+  .rd-figure.clay{background:var(--clay);}
+  .rd-figure.indigo{background:var(--indigo);}
+  .rd-tag{position:absolute; top:18px; left:18px; background:rgba(0,0,0,0.35); color:#fff; font-size:0.8rem; padding:6px 14px; border-radius:20px;}
+  .rd-name{font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:6px;}
+  .rd-price{color:var(--clay); font-weight:600; font-size:1.1rem; margin-bottom:16px;}
+  .rd-desc{color:var(--ink-soft); margin-bottom:20px; font-size:1.02rem; max-width:56ch;}
+  .rd-amenities{display:grid; grid-template-columns:1fr 1fr; gap:10px 30px; margin-bottom:22px;}
+  .rd-amenities li{list-style:none; font-size:0.92rem; color:var(--ink); padding-left:18px; position:relative;}
+  .rd-amenities li::before{content:''; position:absolute; left:0; top:9px; width:6px; height:6px; background:var(--brass); border-radius:50%;}
+  .rd-note{font-size:0.85rem; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:14px; margin-top:8px;}
+
+  .compare{background:var(--indigo); color:#fff;}
+  .compare .section-head h2{color:#fff;}
+  .compare .section-head p{color:#C7C1E0;}
+  table{width:100%; border-collapse:collapse; font-size:0.94rem;}
+  th,td{text-align:left; padding:16px 18px; border-bottom:1px solid rgba(255,255,255,0.12);}
+  th{color:var(--brass); font-weight:600; font-size:0.85rem;}
+  td{color:#DCE0E8;}
+  tr td:first-child{color:#fff; font-weight:600;}
+
+  .book-note{background:var(--clay); color:#fff;}
+  .bn-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;}
+  .bn-grid h2{color:#fff; font-size:clamp(1.6rem,3vw,2.1rem); max-width:22ch;}
+  .bn-grid p{color:#F5E3D3; margin-top:10px; max-width:50ch;}
+
+  @media (max-width:860px){
+    .rd-grid, .rd-grid.reverse{grid-template-columns:1fr;}
+    .rd-grid.reverse .rd-grid-figure{order:0;}
+    table{font-size:0.85rem;}
+    th,td{padding:12px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a class="brand" href="index.html">Cairo Palace Hotel</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  <nav id="siteNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="rooms.html" class="active">Rooms</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Rooms and rates</div>
+    <h1>Three room types, one standard of security</h1>
+    <p>Every room comes with high speed Wi-Fi, 24 hour room service, and access to the same guarded grounds. Rates below are indicative starting prices; call the front desk to confirm current pricing and availability for your dates.</p>
+  </div>
+</section>
+
+<section class="room-detail">
+  <div class="wrap">
+    <div class="rd-grid reveal">
+      <div class="rd-figure acacia photo-frame zoom">
+        <img class="can-zoom" data-group="single-room" data-caption="Single room" src="images/single.png" alt="Single room with bed, desk, and TV at Cairo Palace Hotel" loading="lazy">
+        <span class="rd-tag">Room type 01</span>
+      </div>
+      <div>
+        <h2 class="rd-name">Single</h2>
+        <div class="rd-price">From KES 3,500 per night</div>
+        <p class="rd-desc">Right sized for one traveller, fully equipped, and priced for people moving through Kakuma on their own, whether for a night or an extended posting.</p>
+        <ul class="rd-amenities">
+          <li>One bed, private bathroom</li>
+          <li>High speed Wi-Fi</li>
+          <li>24 hour room service</li>
+          <li>Writing desk</li>
+          <li>Fan and mosquito netting</li>
+          <li>Daily housekeeping</li>
+        </ul>
+        <div class="rd-note">Rate shown is per night, room only. Full board and long stay rates available on request.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="room-detail">
+  <div class="wrap">
+    <div class="rd-grid reverse reveal">
+      <div class="rd-figure clay rd-grid-figure" style="padding:0;">
+        <div class="rd-duo">
+          <div class="photo-frame zoom"><img class="can-zoom" data-group="double-room" data-caption="Comfort Double, twin bed layout" src="images/double.png" alt="Comfort Double room with twin beds" loading="lazy"></div>
+          <div class="photo-frame zoom"><img class="can-zoom" data-group="double-room" data-caption="Comfort Double, bed detail" src="images/double-2.png" alt="Comfort Double room bed dressed with cushions" loading="lazy"></div>
+        </div>
+        <span class="rd-tag">Room type 02</span>
+      </div>
+      <div>
+        <h2 class="rd-name">Comfort Double</h2>
+        <div class="rd-price">From KES 5,000 per night</div>
+        <p class="rd-desc">Built for couples or two colleagues sharing, with a private balcony and enough room to spread out after a long drive up the highway.</p>
+        <ul class="rd-amenities">
+          <li>Double bed, private balcony</li>
+          <li>Deluxe bath amenities</li>
+          <li>High speed Wi-Fi</li>
+          <li>24 hour room service</li>
+          <li>Seating area</li>
+          <li>Daily housekeeping</li>
+        </ul>
+        <div class="rd-note">Rate shown is per night, room only. Ask about weekend rates that include breakfast.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="room-detail" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="rd-grid reveal">
+      <div class="rd-figure indigo photo-frame zoom">
+        <img class="can-zoom" data-group="vip-room" data-caption="VIP Suite" src="images/vip.png" alt="VIP Suite with sofa and wardrobe at Cairo Palace Hotel" loading="lazy">
+        <span class="rd-tag">Room type 03</span>
+      </div>
+      <div>
+        <h2 class="rd-name">VIP Suite</h2>
+        <div class="rd-price">From KES 7,000 per night</div>
+        <p class="rd-desc">The largest room on the property. Guests consistently describe it as spacious, clean, and cool, with air conditioning that holds up against Turkana's heat.</p>
+        <ul class="rd-amenities">
+          <li>Largest floor plan on site</li>
+          <li>Private balcony</li>
+          <li>Air conditioning</li>
+          <li>Deluxe bath amenities</li>
+          <li>High speed Wi-Fi</li>
+          <li>24 hour room service</li>
+        </ul>
+        <div class="rd-note">Rate shown is per night, room only. Full board packages available for extended stays.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Compare rooms at a glance</h2>
+      <p>All three room types share the essentials; here is what changes between them.</p>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>Single</th><th>Comfort Double</th><th>VIP Suite</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Indicative rate</td><td>From KES 3,500</td><td>From KES 5,000</td><td>From KES 7,000</td></tr>
+          <tr><td>Sleeps</td><td>1</td><td>2</td><td>2 to 3</td></tr>
+          <tr><td>Private balcony</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Air conditioning</td><td>Fan only</td><td>Fan only</td><td>Yes</td></tr>
+          <tr><td>Wi-Fi</td><td>Included</td><td>Included</td><td>Included</td></tr>
+          <tr><td>Room service</td><td>24 hours</td><td>24 hours</td><td>24 hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="book-note">
+  <div class="wrap bn-grid">
+    <div>
+      <h2>Rates change with season and length of stay</h2>
+      <p>The figures on this page are a starting point. Call ahead and the front desk will confirm the exact rate, meal plan, and availability for your travel dates.</p>
+    </div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a class="btn" style="background:#fff; color:var(--clay-dim);" href="tel:+254748507659">Call 0748 507659</a>
+      <a class="btn btn-ghost" href="contact.html">Contact the hotel</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Cairo Palace Hotel</div>
+        <p style="max-width:34ch; color:#948BB0; font-size:0.9rem;">A gated hotel on the Kakuma to Lokichogio highway, built for travellers who need a genuinely calm place to rest in Turkana.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="rooms.html">Rooms and rates</a>
+        <a href="menu.html">Restaurant menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About the hotel</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a href="tel:+254748507659">0748 507659</a>
+        <a href="mailto:cairopalace2020@gmail.com">cairopalace2020@gmail.com</a>
+        <a href="contact.html">Map and directions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Cairo Palace Hotel, Kakuma, Turkana County, Kenya</span>
+      <span>Open 24 hours, every day of the week</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

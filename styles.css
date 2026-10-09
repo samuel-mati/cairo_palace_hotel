@@ -1,0 +1,1975 @@
+/* =========================================================
+   CAIRO PALACE HOTEL
+   Complete site stylesheet
+   ========================================================= */
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+   :root {
+    --indigo: #2B2359;
+    --indigo-deep: #18143A;
+    --clay: #DD6A1E;
+    --clay-dim: #B0530F;
+    --acacia: #4E6B4B;
+    --acacia-deep: #3B5138;
+    --sand: #F3EADC;
+    --sand-warm: #E9DAC0;
+    --brass: #E0A23E;
+  
+    --ink: #201A16;
+    --ink-soft: #4F463C;
+  
+    --line: rgba(32, 26, 22, 0.15);
+    --line-light: rgba(255, 255, 255, 0.14);
+  
+    --max: 1140px;
+    --header-h: 84px;
+    --header-h-scrolled: 64px;
+  
+    --shadow-sm: 0 8px 20px rgba(28, 26, 23, 0.06);
+    --shadow-md: 0 14px 34px rgba(28, 26, 23, 0.10);
+    --shadow-lg: 0 22px 50px rgba(28, 26, 23, 0.16);
+  
+    --ease: cubic-bezier(.22, .9, .3, 1);
+  }
+  
+  /* =========================================================
+     2. RESET
+     ========================================================= */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+  }
+  
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: "Work Sans", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+  
+  img {
+    display: block;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  ::selection {
+    background: var(--brass);
+    color: var(--indigo-deep);
+  }
+  
+  :focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
+  }
+  
+  /* =========================================================
+     3. TYPOGRAPHY
+     ========================================================= */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  .serif {
+    color: var(--ink);
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    overflow-wrap: break-word;
+  }
+  
+  h1 {
+    line-height: 1.05;
+  }
+  
+  h2 {
+    line-height: 1.1;
+  }
+  
+  h3 {
+    line-height: 1.2;
+  }
+  
+  p {
+    max-width: 70ch;
+  }
+  
+  /* =========================================================
+     4. GLOBAL LAYOUT
+     ========================================================= */
+  
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  
+  section {
+    padding: 100px 0;
+  }
+  
+  .section-head {
+    max-width: 660px;
+    margin-bottom: 52px;
+  }
+  
+  .section-head h2 {
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    line-height: 1.1;
+  }
+  
+  .section-head p {
+    max-width: 58ch;
+    margin-top: 16px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+  
+  /* =========================================================
+     5. BUTTONS
+     ========================================================= */
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: var(--clay);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  
+  .btn:hover {
+    background: var(--clay-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(32, 26, 22, .16);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    border-color: rgba(255, 255, 255, .55);
+    color: #fff;
+  }
+  
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, .1);
+    border-color: #fff;
+    box-shadow: none;
+  }
+  
+  .btn-dark {
+    background: var(--indigo);
+    color: #fff;
+  }
+  
+  .btn-dark:hover {
+    background: var(--indigo-deep);
+  }
+  
+  /* =========================================================
+     6. HEADER / NAVIGATION
+     ========================================================= */
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    padding: 0 32px;
+    background: var(--indigo);
+    transition: height .3s ease, box-shadow .3s ease, background .3s ease;
+  }
+  
+  header.scrolled {
+    height: var(--header-h-scrolled);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .18);
+  }
+  
+  .brand {
+    display: inline-block;
+    color: #fff;
+    font-family: "Fraunces", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  header nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  
+  header nav a {
+    position: relative;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    color: var(--sand-warm);
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 500;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  
+  header nav a:hover {
+    color: #fff;
+  }
+  
+  header nav a.active {
+    border-bottom-color: var(--brass);
+    color: #fff;
+  }
+  
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 60;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+  
+  .nav-toggle:hover {
+    background: rgba(255, 255, 255, .08);
+  }
+  
+  /* =========================================================
+     7. INTERIOR PAGE HERO
+     ========================================================= */
+  
+  .page-hero {
+    padding: 170px 0 70px;
+    background: var(--indigo);
+    color: #fff;
+  }
+  
+  .page-hero .kicker {
+    margin-bottom: 14px;
+    color: var(--brass);
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+  
+  .page-hero h1 {
+    max-width: 16ch;
+    color: #fff;
+    font-size: clamp(2.2rem, 4.4vw, 3.2rem);
+  }
+  
+  .page-hero p {
+    max-width: 56ch;
+    margin-top: 16px;
+    color: #C7C1E0;
+    font-size: 1.05rem;
+  }
+  
+  /* =========================================================
+     8. HOME HERO
+     ========================================================= */
+  
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: var(--header-h);
+    background: var(--indigo);
+    perspective: 1400px;
+  }
+  
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(24, 20, 58, .58) 0%,
+      rgba(24, 20, 58, .80) 65%,
+      rgba(24, 20, 58, .94) 100%
+    );
+  }
+  
+  .hero-scene {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: .5;
+    transform-style: preserve-3d;
+    pointer-events: none;
+  }
+  
+  .layer {
+    position: absolute;
+    will-change: transform;
+  }
+  
+  .hero-sun {
+    position: absolute;
+    left: 72%;
+    top: 16%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--brass);
+  }
+  
+  .hills-far {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 36%;
+    opacity: .6;
+    background: #4B4130;
+    clip-path: polygon(
+      0% 100%, 0% 55%, 12% 48%, 26% 60%,
+      40% 40%, 55% 58%, 68% 45%, 82% 62%,
+      100% 50%, 100% 100%
+    );
+  }
+  
+  .hills-near {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24%;
+    background: #3E3428;
+    clip-path: polygon(
+      0% 100%, 0% 70%, 15% 58%, 30% 72%,
+      50% 52%, 70% 74%, 85% 60%, 100% 68%,
+      100% 100%
+    );
+  }
+  
+  .hero-floor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 12%;
+    background: var(--clay-dim);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: var(--max);
+    min-height: calc(100vh - var(--header-h));
+    margin: 0 auto;
+    padding: 70px 32px 100px;
+  }
+  
+  .hero-rule {
+    width: 52px;
+    height: 2px;
+    margin-bottom: 20px;
+    background: var(--brass);
+  }
+  
+  .hero-content h1 {
+    max-width: 14ch;
+    color: #fff;
+    font-size: clamp(2.4rem, 5.6vw, 4.2rem);
+    line-height: 1.05;
+  }
+  
+  .hero-content p {
+    max-width: 44ch;
+    margin-top: 20px;
+    color: #F1E9D8;
+    font-size: 1.15rem;
+  }
+  
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  
+  .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 44px;
+    color: #F1E9D8;
+    font-size: .95rem;
+  }
+  
+  .hero-rating .score {
+    color: #fff;
+    font-family: "Fraunces", serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+  
+  .scroll-cue {
+    position: absolute;
+    left: 32px;
+    bottom: 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #F1E9D8;
+    font-size: .9rem;
+    opacity: .85;
+    pointer-events: none;
+  }
+  
+  .scroll-line {
+    position: relative;
+    width: 1px;
+    height: 32px;
+    overflow: hidden;
+    background: rgba(241, 233, 216, .5);
+  }
+  
+  .scroll-line::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F1E9D8;
+    animation: drip 1.8s ease-in-out infinite;
+  }
+  
+  @keyframes drip {
+    to {
+      top: 100%;
+    }
+  }
+  
+  /* =========================================================
+     9. HERO ENTRY ANIMATION
+     ========================================================= */
+  
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .rise {
+    animation: riseIn .9s var(--ease) both;
+  }
+  
+  .rise-1 { animation-delay: .05s; }
+  .rise-2 { animation-delay: .22s; }
+  .rise-3 { animation-delay: .38s; }
+  .rise-4 { animation-delay: .52s; }
+  
+  /* =========================================================
+     10. SCROLL REVEAL
+     ========================================================= */
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .6s ease, transform .6s var(--ease);
+  }
+  
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* =========================================================
+     11. HOME — INTRO
+     ========================================================= */
+  
+  .intro {
+    padding: 96px 0;
+    background: var(--sand);
+  }
+  
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 64px;
+    align-items: start;
+  }
+  
+  .intro-lead {
+    font-family: "Fraunces", serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  
+  .intro-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+  
+  .intro-item:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .intro-icon {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    color: var(--clay);
+  }
+  
+  .intro-item .t {
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  
+  .intro-item .d {
+    color: var(--ink-soft);
+    font-size: .92rem;
+  }
+  
+  /* =========================================================
+     12. HOME — HIGHLIGHTS
+     ========================================================= */
+  
+  .highlights {
+    padding: 96px 0;
+    background: var(--indigo);
+    color: #fff;
+  }
+  
+  .highlights .section-head h2 {
+    color: #fff;
+  }
+  
+  .highlights .section-head p {
+    color: #C7C1E0;
+  }
+  
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .14);
+  }
+  
+  .highlight-card {
+    padding: 36px 32px;
+    background: var(--indigo);
+  }
+  
+  .highlight-card svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 18px;
+    color: var(--brass);
+  }
+  
+  .highlight-card h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.15rem;
+  }
+  
+  .highlight-card p {
+    color: #C0B8D6;
+    font-size: .94rem;
+  }
+  
+  /* =========================================================
+     13. HOME — ROOMS PREVIEW
+     ========================================================= */
+  
+  .rooms-preview {
+    padding: 96px 0;
+    background: var(--sand);
+  }
+  
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    perspective: 1600px;
+  }
+  
+  .room-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transform-style: preserve-3d;
+    transition: box-shadow .2s ease, transform .15s ease-out;
+  }
+  
+  .room-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .room-card .photo-frame {
+    height: 170px;
+  }
+  
+  .room-card .body {
+    padding: 24px 26px 28px;
+  }
+  
+  .room-card h3 {
+    margin-bottom: 6px;
+    font-size: 1.3rem;
+  }
+  
+  .room-card .price {
+    margin-bottom: 14px;
+    color: var(--clay);
+    font-size: .92rem;
+    font-weight: 600;
+  }
+  
+  .room-card .desc {
+    margin-bottom: 16px;
+    color: var(--ink-soft);
+    font-size: .92rem;
+  }
+  
+  .room-card a.link {
+    padding-bottom: 1px;
+    border-bottom: 1.5px solid var(--brass);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 600;
+  }
+  
+  /* =========================================================
+     14. HOME — DINING TEASER
+     ========================================================= */
+  
+  .dining-teaser {
+    padding: 96px 0;
+    background: var(--acacia-deep);
+    color: #fff;
+  }
+  
+  .dining-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  
+  .dining-grid h2 {
+    color: #fff;
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  }
+  
+  .dining-grid p.lead {
+    max-width: 48ch;
+    margin-top: 16px;
+    color: #DCE7DA;
+    font-size: 1.1rem;
+  }
+  
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  
+  .tag-pill {
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 20px;
+    font-size: .88rem;
+  }
+  
+  .dine-collage {
+    position: relative;
+    height: 300px;
+  }
+  
+  .dine-collage .photo-frame {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
+  }
+  
+  .dine-collage .pf1 {
+    top: 0;
+    left: 10px;
+    z-index: 1;
+    width: 230px;
+    height: 230px;
+  }
+  
+  .dine-collage .pf2 {
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 170px;
+    height: 170px;
+    border: 4px solid var(--acacia-deep);
+  }
+  
+  /* =========================================================
+     15. HOME — REVIEWS
+     ========================================================= */
+  
+  .reviews {
+    padding: 96px 0;
+    background: var(--indigo-deep);
+    color: #fff;
+  }
+  
+  .reviews .section-head h2 {
+    color: #fff;
+  }
+  
+  .reviews .section-head p {
+    color: #C7C1E0;
+  }
+  
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .review-card {
+    padding: 28px;
+    border-radius: 3px;
+    background: #28224E;
+    transition: transform .25s ease, background .25s ease;
+  }
+  
+  .review-card:hover {
+    background: #30295A;
+  }
+  
+  .review-card .stars {
+    margin-bottom: 14px;
+    color: var(--brass);
+    letter-spacing: 2px;
+  }
+  
+  .review-card p {
+    margin-bottom: 16px;
+    color: #D9D4EC;
+    font-size: .94rem;
+  }
+  
+  .review-card .who {
+    color: #948BB0;
+    font-size: .9rem;
+  }
+  
+  .review-card.r1 { transform: rotate(-1.1deg); }
+  .review-card.r2 { transform: rotate(.8deg); }
+  .review-card.r3 { transform: rotate(-.6deg); }
+  
+  .review-card.r1:hover {
+    transform: rotate(-1.1deg) translateY(-4px);
+  }
+  
+  .review-card.r2:hover {
+    transform: rotate(.8deg) translateY(-4px);
+  }
+  
+  .review-card.r3:hover {
+    transform: rotate(-.6deg) translateY(-4px);
+  }
+  
+  /* =========================================================
+     16. PHOTO COMPONENTS
+     ========================================================= */
+  
+  .photo-frame {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .6s var(--ease);
+  }
+  
+  .photo-frame.zoom:hover img {
+    transform: scale(1.07);
+  }
+  
+  .photo-frame .cap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 14px 16px;
+    background: linear-gradient(
+      180deg,
+      rgba(23, 29, 41, 0) 0%,
+      rgba(23, 29, 41, .65) 100%
+    );
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 500;
+    pointer-events: none;
+  }
+  
+  .can-zoom {
+    cursor: zoom-in;
+  }
+  
+  /* =========================================================
+     17. HOME — GALLERY STRIP
+     ========================================================= */
+  
+  .gstrip {
+    background: var(--sand);
+  }
+  
+  .gstrip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  .gstrip-grid .photo-frame {
+    height: 190px;
+    border-radius: 3px;
+  }
+  
+  .gstrip-grid .photo-frame:first-child {
+    grid-row: span 2;
+    height: 396px;
+  }
+  
+  .gstrip-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  
+  .gstrip-foot p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: .95rem;
+  }
+  
+  .gstrip-foot .link {
+    border-bottom: 1.5px solid var(--brass);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 600;
+  }
+  
+  /* =========================================================
+     18. HOME — LOCATION
+     ========================================================= */
+  
+  .location-teaser {
+    padding: 96px 0;
+    background: var(--sand);
+  }
+  
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  
+  .location-grid h2 {
+    margin-bottom: 16px;
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  }
+  
+  .location-grid p {
+    margin-bottom: 24px;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+  }
+  
+  .map-frame {
+    height: 280px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--sand-warm);
+  }
+  
+  .map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* =========================================================
+     19. HOME — CTA BAND
+     ========================================================= */
+  
+  .cta-band {
+    background: var(--clay);
+    color: #fff;
+  }
+  
+  .cta-band .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .cta-band h2 {
+    max-width: 20ch;
+    color: #fff;
+    font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+  }
+  
+  .cta-band .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  
+  /* =========================================================
+     20. ROOMS PAGE FIGURES
+     ========================================================= */
+  
+  .rd-figure {
+    background: var(--sand-warm);
+  }
+  
+  .rd-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .rd-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    gap: 4px;
+  }
+  
+  .rd-duo .photo-frame {
+    height: 100%;
+  }
+  
+  /* =========================================================
+     21. ABOUT — GROUNDS
+     ========================================================= */
+  
+  .grounds-strip {
+    background: var(--sand);
+  }
+  
+  .gs-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 18px;
+  }
+  
+  .gs-grid .photo-frame,
+  .gs-grid .photo-frame:first-child {
+    height: 280px;
+    border-radius: 3px;
+  }
+  
+  /* =========================================================
+     22. ABOUT — TEAM PHOTO
+     ========================================================= */
+  
+  .team.has-photo {
+    position: relative;
+    isolation: isolate;
+    background: none;
+  }
+  
+  .team.has-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url("images/conference.png");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .team.has-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      180deg,
+      rgba(59, 81, 56, .93),
+      rgba(23, 29, 41, .93)
+    );
+  }
+  
+  /* =========================================================
+     23. MENU PAGE
+     ========================================================= */
+  
+  .section-head-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin-bottom: 52px;
+  }
+  
+  .section-head-row .section-head {
+    margin-bottom: 0;
+  }
+  
+  .menu-banner {
+    flex-shrink: 0;
+    width: 210px;
+    height: 210px;
+    border-radius: 6px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .18);
+  }
+  
+  .menu-section.dark .menu-banner,
+  .menu-section.acacia .menu-banner {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .4);
+  }
+  
+  /* =========================================================
+     24. MENU INTRO COLLAGE
+     ========================================================= */
+  
+  .plate-block {
+    position: relative;
+  }
+  
+  .plate-block .photo-frame {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+  }
+  
+  .plate-block .p1 {
+    top: 10px;
+    left: 30px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .plate-block .p2 {
+    top: 100px;
+    left: 160px;
+    z-index: 1;
+    width: 130px;
+    height: 130px;
+    border: 4px solid var(--sand);
+  }
+  
+  /* =========================================================
+     25. CONTACT PAGE
+     ========================================================= */
+  
+  .contact-photo {
+    height: 190px;
+    margin-bottom: 28px;
+    border-radius: 3px;
+  }
+  
+  .contact-photo .cap {
+    font-size: .8rem;
+  }
+  
+  /* =========================================================
+     26. GALLERY GRID
+     ========================================================= */
+  
+  .g-item {
+    padding: 0;
+  }
+  
+  .g-item .photo-frame {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /* =========================================================
+     26B. FOOTER
+     ========================================================= */
+
+  footer {
+    background: var(--indigo-deep);
+    color: #948BB0;
+    padding: 64px 0 30px;
+    font-size: 0.9rem;
+  }
+
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .foot-brand {
+    font-family: 'Fraunces', serif;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .foot-about p {
+    max-width: 34ch;
+    color: #948BB0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .foot-col h4 {
+    color: #D9D4EC;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .foot-col a {
+    display: block;
+    color: #948BB0;
+    text-decoration: none;
+    margin-bottom: 9px;
+    font-size: 0.9rem;
+    transition: color .2s ease;
+  }
+
+  .foot-col a:hover {
+    color: #fff;
+  }
+
+  .foot-bottom {
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #7A7096;
+    font-size: 0.85rem;
+  }
+
+  
+  /* =========================================================
+   27. LIGHTBOX
+   ========================================================= */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  padding: 60px 20px;
+  background: rgba(15, 18, 26, .94);
+  opacity: 0;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.lightbox-overlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lightbox-overlay img {
+  max-width: min(92vw, 1100px);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+  transform: scale(.96);
+  transition: transform .25s ease;
+}
+
+.lightbox-overlay.open img {
+  transform: scale(1);
+}
+
+.lightbox-cap {
+  position: absolute;
+  right: 0;
+  bottom: 26px;
+  left: 0;
+  color: #E9DAC0;
+  text-align: center;
+  font-size: .9rem;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, .2);
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.lightbox-close {
+  top: 24px;
+  right: 24px;
+}
+
+.lightbox-prev {
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev:disabled,
+.lightbox-next:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+/* =========================================================
+   28. WHATSAPP FLOATING BUTTON
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #3FE07A 0%, #25D366 45%, #1EAE55 100%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, .18),
+    0 10px 22px rgba(15, 60, 35, .28),
+    0 0 0 3px rgba(255, 255, 255, .9);
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .25s ease;
+  animation: wa-pop .5s cubic-bezier(.34,1.56,.64,1) .6s both;
+}
+
+.whatsapp-float::before,
+.whatsapp-float::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  opacity: 0;
+  pointer-events: none;
+  animation: wa-ring 2.6s ease-out infinite;
+}
+
+.whatsapp-float::after {
+  animation-delay: 1.3s;
+}
+
+.whatsapp-float:hover {
+  background: radial-gradient(circle at 32% 28%, #4CEF89 0%, #22C860 45%, #189249 100%);
+  transform: translateY(-5px) scale(1.06);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, .2),
+    0 16px 30px rgba(15, 60, 35, .34),
+    0 0 0 3px rgba(255, 255, 255, .95);
+}
+
+.whatsapp-float:active {
+  transform: translateY(-2px) scale(.97);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .12));
+  transition: transform .3s ease;
+}
+
+.whatsapp-float:hover svg {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.whatsapp-float .wa-label {
+  position: absolute;
+  right: 74px;
+  display: flex;
+  align-items: center;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: var(--indigo-deep);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(6px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+}
+
+.whatsapp-float .wa-label::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: var(--indigo-deep);
+  border-radius: 2px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.whatsapp-float:hover .wa-label,
+.whatsapp-float:focus-visible .wa-label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+@keyframes wa-pop {
+  0% { opacity: 0; transform: scale(.4) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes wa-ring {
+  0% { transform: scale(1); opacity: .5; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    animation: none;
+  }
+  .whatsapp-float::before,
+  .whatsapp-float::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* =========================================================
+   29. SHARED LINKS
+   ========================================================= */
+
+.link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: .92rem;
+  font-weight: 600;
+  border-bottom: 1.5px solid var(--brass);
+  padding-bottom: 1px;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.link:hover {
+  color: var(--clay);
+  border-color: var(--clay);
+}
+
+/* =========================================================
+   30. MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 860px) {
+  .wrap {
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  header {
+    padding: 0 24px;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 90px 28px 28px;
+    background: var(--indigo-deep);
+    transform: translateX(100%);
+    transition: transform .3s ease;
+  }
+
+  header nav.open {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 60;
+    display: block;
+  }
+
+  .hero-content {
+    padding: 0 24px;
+  }
+
+  .scroll-cue {
+    left: 24px;
+  }
+
+  .intro-grid,
+  .highlight-grid,
+  .room-grid,
+  .dining-grid,
+  .review-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    gap: 44px;
+  }
+
+  .highlight-grid {
+    gap: 1px;
+  }
+
+  .dining-grid {
+    gap: 44px;
+  }
+
+  .location-grid {
+    gap: 36px;
+  }
+
+  .room-grid {
+    gap: 24px;
+  }
+
+  .review-grid {
+    gap: 20px;
+  }
+
+  .gstrip-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gstrip-grid .photo-frame:first-child {
+    grid-row: span 1;
+    height: 190px;
+  }
+
+  .dine-collage {
+    height: 260px;
+  }
+
+  .dine-collage .pf1 {
+    width: 190px;
+    height: 190px;
+  }
+
+  .dine-collage .pf2 {
+    width: 130px;
+    height: 130px;
+  }
+
+  .gs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gs-grid .photo-frame:first-child {
+    grid-column: span 2;
+    height: 220px;
+  }
+
+  .section-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-banner {
+    width: 100%;
+    height: 200px;
+  }
+
+  .foot-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta-band .inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .lightbox-close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-float .wa-label {
+    display: none;
+  }
+}
+
+/* =========================================================
+   31. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
+  .wrap {
+    padding: 0 18px;
+  }
+
+  section {
+    padding: 68px 0;
+  }
+
+  header {
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  header.scrolled {
+    height: 60px;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero-content {
+    min-height: calc(100vh - 72px);
+    padding: 50px 18px 80px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    margin-top: 26px;
+  }
+
+  .hero-rating {
+    margin-top: 32px;
+    align-items: flex-start;
+  }
+
+  .hero-rating .score {
+    font-size: 1.45rem;
+  }
+
+  .scroll-cue {
+    left: 18px;
+    bottom: 18px;
+  }
+
+  .intro {
+    padding: 68px 0;
+  }
+
+  .intro-lead {
+    font-size: 1.3rem;
+  }
+
+  .highlight-card {
+    padding: 30px 24px;
+  }
+
+  .room-card .body {
+    padding: 22px 22px 24px;
+  }
+
+  .room-card .photo-frame {
+    height: 190px;
+  }
+
+  .dining-grid {
+    gap: 34px;
+  }
+
+  .dine-collage {
+    height: 230px;
+  }
+
+  .dine-collage .pf1 {
+    width: 165px;
+    height: 165px;
+    left: 0;
+  }
+
+  .dine-collage .pf2 {
+    width: 115px;
+    height: 115px;
+    right: 5px;
+  }
+
+  .tag-pill {
+    padding: 7px 13px;
+    font-size: .82rem;
+  }
+
+  .review-card.r1,
+  .review-card.r2,
+  .review-card.r3 {
+    transform: none;
+  }
+
+  .gstrip-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gstrip-grid .photo-frame,
+  .gstrip-grid .photo-frame:first-child {
+    height: 150px;
+  }
+
+  .gs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-grid .photo-frame:first-child {
+    grid-column: span 1;
+  }
+
+  .map-frame {
+    height: 240px;
+  }
+
+  .cta-band .inner {
+    padding: 48px 0;
+  }
+
+  .cta-band .actions {
+    width: 100%;
+  }
+
+  .cta-band .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+  }
+
+  .lightbox-overlay {
+    padding: 50px 12px;
+  }
+
+  .lightbox-overlay img {
+    max-width: 96vw;
+    max-height: 74vh;
+  }
+
+  .lightbox-cap {
+    bottom: 18px;
+    padding: 0 50px;
+    font-size: .82rem;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .whatsapp-float {
+    right: 15px;
+    bottom: 15px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* =========================================================
+   32. TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+  .photo-frame.zoom:hover img {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .whatsapp-float:hover {
+    transform: none;
+  }
+
+  .whatsapp-float .wa-label {
+    display: none;
+  }
+}
+
+/* =========================================================
+   33. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .rise {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-line::after {
+    animation: none;
+  }
+
+  .hero-scene {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   34. PRINT
+   ========================================================= */
+
+@media print {
+  header {
+    position: static;
+    height: auto;
+    background: none;
+    box-shadow: none;
+  }
+
+  header nav,
+  .nav-toggle,
+  .scroll-cue,
+  .hero-scene,
+  .hero-photo,
+  .whatsapp-float,
+  .lightbox-overlay {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+    background: #fff;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .hero-content h1,
+  .hero-content p {
+    color: var(--ink);
+  }
+
+  section,
+  footer {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

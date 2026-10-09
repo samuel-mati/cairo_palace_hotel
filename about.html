@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About : Cairo Palace Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .story{background:var(--sand);}
+  .story-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start;}
+  .story h2{font-size:clamp(1.8rem,3vw,2.3rem); margin-bottom:20px;}
+  .story p{color:var(--ink-soft); margin-bottom:16px; font-size:1.02rem;}
+  .story-figure{background:var(--acacia); height:100%; min-height:340px; position:relative; overflow:hidden;}
+  .story-figure svg{position:absolute; bottom:0; left:0; width:100%;}
+
+  .values{background:var(--indigo); color:#fff;}
+  .values .section-head h2{color:#fff;}
+  .values .section-head p{color:#C7C1E0;}
+  .val-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1);}
+  .val-item{background:var(--indigo); padding:34px 30px;}
+  .val-item h3{color:#fff; margin-bottom:10px; font-size:1.1rem;}
+  .val-item p{color:#B6AECE; font-size:0.94rem;}
+
+  .place{background:var(--sand);}
+  .place-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .place p{color:var(--ink-soft); margin-bottom:16px; font-size:1.02rem;}
+  .stat-row{display:flex; gap:40px; margin-top:26px; flex-wrap:wrap;}
+  .stat .n{font-family:'Fraunces', serif; font-size:2rem; color:var(--clay);}
+  .stat .l{font-size:0.85rem; color:var(--ink-soft);}
+
+  .team{background:var(--acacia-deep); color:#fff;}
+  .team .section-head h2{color:#fff;}
+  .team .section-head p{color:#DCE7DA;}
+  .team-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .team-tag{border:1px solid rgba(255,255,255,0.4); padding:10px 18px; border-radius:20px; font-size:0.9rem;}
+
+  @media (max-width:860px){
+    .story-grid,.val-grid,.place-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a class="brand" href="index.html">Cairo Palace Hotel</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  <nav id="siteNav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="menu.html">Menu</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">About the hotel</div>
+    <h1>Built for the people who actually travel through Kakuma</h1>
+    <p>Not a resort, and not trying to be one. Cairo Palace is a working hotel for a working town, run by people who understand exactly who walks through the gate.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="reveal">
+        <h2>A hotel shaped by its location</h2>
+        <p>Kakuma sits on the Kakuma to Lokichogio highway in Turkana County, close to the South Sudan border and to one of the largest refugee camps in East Africa. It draws a steady flow of humanitarian staff, government officials, traders, and families, none of whom are looking for a beach holiday. They need somewhere secure to sleep, eat well, and hold a meeting the next morning.</p>
+        <p>Cairo Palace Hotel was built around that reality. The grounds sit behind a guarded gate, the restaurant runs long hours because guests arrive at every hour, and the rooms are laid out for people who will use them as a base rather than a backdrop.</p>
+        <p>Guests often mention the grounds first: lawns and shade trees kept green through a hot, dry climate, a small but genuine change of pace after a long stretch on the highway.</p>
+      </div>
+      <div class="story-figure reveal photo-frame zoom">
+        <img class="can-zoom" data-group="about" data-caption="The grounds at Cairo Palace Hotel" src="images/cover2.png" alt="Palm-lined garden path on the hotel grounds" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grounds-strip">
+  <div class="wrap">
+    <div class="gs-grid">
+      <div class="photo-frame zoom reveal"><img class="can-zoom" data-group="about" data-caption="The hotel building, viewed from the upper floor" src="images/cover.png" alt="Cairo Palace Hotel building and rooftop terrace" loading="lazy"></div>
+      <div class="photo-frame zoom reveal"><img class="can-zoom" data-group="about" data-caption="The main gate on the highway" src="images/gate.png" alt="Cairo Palace Hotel gate and entrance signage" loading="lazy"></div>
+      <div class="photo-frame zoom reveal"><img class="can-zoom" data-group="about" data-caption="Conference room set for a workshop" src="images/conference.png" alt="Conference room set up for a meeting" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>What guests can count on</h2>
+      <p>Four things that stay consistent no matter which room you book.</p>
+    </div>
+    <div class="val-grid">
+      <div class="val-item reveal">
+        <h3>Security first</h3>
+        <p>A manned gate, enclosed perimeter, and staff on the property overnight, every night of the year.</p>
+      </div>
+      <div class="val-item reveal">
+        <h3>Straight answers on price</h3>
+        <p>Rates are quoted plainly over the phone before you travel, with no surprise charges at checkout.</p>
+      </div>
+      <div class="val-item reveal">
+        <h3>A kitchen that adapts</h3>
+        <p>Somali grill, Indian dishes, and full board packages, built around who is actually staying that week.</p>
+      </div>
+      <div class="val-item reveal">
+        <h3>Room to work</h3>
+        <p>Conference space and event grounds used regularly for training sessions and organisational meetings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="place">
+  <div class="wrap">
+    <div class="place-grid">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:20px;">
+          <h2>Where you will actually be</h2>
+        </div>
+        <p>The hotel sits on the Kakuma to Lokichogio highway, roughly 1.4 km from Kakuma town centre and close to Shepherds Hospital. Lodwar, the nearest airport, is about 120 km away on a road guests consistently describe as smooth and quiet.</p>
+        <p>Turkana's climate is hot and dry for most of the year, which is part of why the hotel puts real effort into its grounds. Shade, watered lawns, and a covered gathering area make a difference guests notice within the first few minutes of arriving.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="n">1.4 km</div><div class="l">from Kakuma town</div></div>
+          <div class="stat"><div class="n">120 km</div><div class="l">to Lodwar airport</div></div>
+          <div class="stat"><div class="n">24 hrs</div><div class="l">front desk coverage</div></div>
+        </div>
+      </div>
+      <div class="reveal" style="border:1px solid var(--line); border-radius:3px; overflow:hidden; height:320px;">
+        <iframe src="https://www.google.com/maps?q=Cairo+Palace+Hotel+Kakuma&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Kakuma and surrounding area" style="width:100%; height:100%; border:0;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team has-photo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Run by people who know the town</h2>
+      <p>The front desk, kitchen, and grounds team are drawn largely from Kakuma and the wider Turkana West community, alongside chefs brought in for the Indian and Somali menus.</p>
+    </div>
+    <div class="team-row reveal">
+      <span class="team-tag">Front office team</span>
+      <span class="team-tag">Security detail</span>
+      <span class="team-tag">Somali grill chef</span>
+      <span class="team-tag">Indian kitchen chef</span>
+      <span class="team-tag">Grounds and maintenance</span>
+      <span class="team-tag">Events coordination</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Cairo Palace Hotel</div>
+        <p style="max-width:34ch; color:#948BB0; font-size:0.9rem;">A gated hotel on the Kakuma to Lokichogio highway, built for travellers who need a genuinely calm place to rest in Turkana.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="rooms.html">Rooms and rates</a>
+        <a href="menu.html">Restaurant menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About the hotel</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a href="tel:+254748507659">0748 507659</a>
+        <a href="mailto:cairopalace2020@gmail.com">cairopalace2020@gmail.com</a>
+        <a href="contact.html">Map and directions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Cairo Palace Hotel, Kakuma, Turkana County, Kenya</span>
+      <span>Open 24 hours, every day of the week</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
